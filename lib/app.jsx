@@ -13,16 +13,16 @@ var Box = React.createClass({
    * Render a HTML button
    * @return {ReactElement}
    */
-   getInitialState: function() {
+   'getInitialState': function onGetInitialState() {
     // naming it initialX clearly indicates that the only purpose
     // of the passed down prop is to initialize something internally
-    return {initialvalue: 'X'};
+    return {'value': this.props.initialValue};
   },
   'render': function onRender () {
     return (
-      <button style={boxStyle}>{this.state.initialvalue}</button>
+      <button style={boxStyle}>{this.state.value}</button>
     );
   }
 });
 
-React.render(<Box value='X'/>, document.body);
+React.render(<Box initialValue={'X'}/>, document.body);
